@@ -1,0 +1,54 @@
+body{
+	font-family: Arial;
+	color:#afafaf;
+	}
+	#inner-container{
+		max-width:600px;
+		margin:auto;
+		}
+#result strong{
+	color:#3071A9;
+	}
+.btn-primary{
+	background-color:#888CA0;
+	border-color:#747EA7;
+	}
+#listViewContainer button{
+	margin: 5px;
+	width:30px;
+	height:30px;
+	padding:0;
+}
+#listViewContainer button.active{
+	background-color:#747ea7;
+	border:none;
+	outline:none;
+	color:#fff;
+}
+#pagination li:hover{
+	cursor:pointer;
+}
+#listView{
+	padding-left:5px;
+}
+#listView li {
+	list-style: none;
+}
+footer{
+	padding: 5px 20px;
+	background-color: #747EA7;
+	width:100%;
+	color:#fff;
+	}
+footer h4{
+	font-size: 12px;
+	}
+footer a{
+	color:#254242;
+	}
+@media (max-width : 768px){
+	h1 {
+		font-size:22px;
+		padding:0;
+		}
+	}
