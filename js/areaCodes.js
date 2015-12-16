@@ -15,21 +15,21 @@ toTitleCase = function (str) {
 };
 
 search = function (nameOrNumber) {
-	var code = document.getElementById('areaCode').value, 
-	    name = document.getElementById('areaName').value, 
+	var code = document.getElementById('areaCode').value,
+	    name = document.getElementById('areaName').value,
 	    town = "",
             i,
             areaCode,
             areaName,
             thisCode = "";
-	
+
 	document.getElementById('result').innerHTML = "";
-	    
+
 	if (nameOrNumber === "number") {
 		if(!parseInt(code, 10)) {
 			document.getElementById('error').innerHTML = "<h5 style='color:red;'>Please enter the area code into the box above</h5>";
 			}
-				
+
 		if (code !== "" && code[0] === "0"){
 			for (i = 0; i < data.length; i += 1){
 				if (data[i].AreaCode === code) {
@@ -37,18 +37,18 @@ search = function (nameOrNumber) {
 					town = data[i].Town;
 					document.getElementById('error').innerHTML = "";
 					document.getElementById('areaCode').value = "";
-					document.getElementById('result').innerHTML = ""+areaCode+" is the Area Code for <strong>"+town+"</strong>";	
+					document.getElementById('result').innerHTML = ""+areaCode+" is the Area Code for <strong>"+town+"</strong>";
 					}
 				}
 			if (town === ""){
 				document.getElementById('error').innerHTML = "";
 				document.getElementById('result').innerHTML = "Sorry, we don't have a record for that number! Please check the number and try again.";
 				}
-			
+
 		}else{
 			document.getElementById('error').innerHTML = "<h5 style='color:red;'>Please enter the area code in the box above</h5><p>Telephone area codes are between 3 and 5 digits long and begin with a 0 (zero).</p>";
 		}
-	} 
+	}
 	else {
 		if (parseInt(name, 10)) {
 			document.getElementById('error').innerHTML = "<h5 style='color:red;'>Please enter the area name (not the number) into the box above</h5>";
@@ -61,24 +61,24 @@ search = function (nameOrNumber) {
 					thisCode = data[i].AreaCode;
 					document.getElementById('error').innerHTML = "";
 					document.getElementById('areaName').value = "";
-					document.getElementById('result').innerHTML = "<strong>"+thisCode+"</strong> is the Area Code for "+areaName+"";	
+					document.getElementById('result').innerHTML = "<strong>"+thisCode+"</strong> is the Area Code for "+areaName+"";
 					}
 				}
 			if (thisCode === ""){
 				document.getElementById('error').innerHTML = "";
 				document.getElementById('result').innerHTML = "Sorry, we don't have a record for that area! Please check the Area Name and try again.";
 				}
-			
+
 		}else{
 			document.getElementById('error').innerHTML = "<h5 style='color:red;'>Please enter the area name in the box above</h5>";
-		}	
+		}
 	}
 };
 document.getElementById('submitNumber').addEventListener('click', function(e){
 	e.preventDefault();
 	search("number");
 	}, false);
-	
+
 document.getElementById('submitName').addEventListener('click', function(e){
 	e.preventDefault();
 	search("name");
@@ -169,7 +169,7 @@ letterSearch = function (letter, page) {
 			for (var i = 40; i < 50; i+=1){
 				if (list[i] !== undefined){
 					document.getElementById('listView').innerHTML += list[i];
-					}	
+					}
 				}
 			}
 		else if (page === 6) {
@@ -203,7 +203,6 @@ letterSearch = function (letter, page) {
 	};
 
 var buttons = document.getElementById('listViewContainer').getElementsByTagName('button');
-console.log(buttons);
 for (var i = 0; i< buttons.length;i+=1){
 	buttons[i].addEventListener('click', function (e) {
 		e.preventDefault();
